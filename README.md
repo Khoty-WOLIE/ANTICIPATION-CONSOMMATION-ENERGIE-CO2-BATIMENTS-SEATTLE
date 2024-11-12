@@ -4,6 +4,10 @@ Anticipez les besoins en consommation de bâtiments
 
 # Anticipation des Besoins en Consommation d'Énergie et d'Émissions de CO2 des Bâtiments - Ville de Seattle
 
+## Aperçu de l'entreprise
+
+![Aperçu du site web](images/DS_projet4.PNG)
+
 ## Contexte
 
 Je travaille pour la ville de **Seattle** dans le cadre de son objectif de neutralité carbone à l’horizon 2050. Mon équipe s'intéresse à la consommation d'énergie et aux émissions de CO2 des bâtiments non résidentiels. Des relevés minutieux ont été réalisés en 2016, mais ces relevés sont coûteux et difficiles à reproduire à grande échelle. L'objectif est donc de prédire la consommation d'énergie et les émissions de CO2 des bâtiments non mesurés à partir de leurs caractéristiques structurelles (taille, usage, date de construction, etc.).
