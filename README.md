@@ -1,111 +1,109 @@
-# OPC_DATA_SCIENTIST_PROJET4
-Anticipez les besoins en consommation de bâtiments
-
-
-# Anticipation des Besoins en Consommation d'Énergie et d'Émissions de CO2 des Bâtiments - Ville de Seattle
-
 ## Aperçu de l'entreprise
 
 ![Aperçu du site web](images/DS_projet4.PNG)
 
-## Contexte
+## 📌 Contexte professionnel
 
-Je travaille pour la ville de **Seattle** dans le cadre de son objectif de neutralité carbone à l’horizon 2050. Mon équipe s'intéresse à la consommation d'énergie et aux émissions de CO2 des bâtiments non résidentiels. Des relevés minutieux ont été réalisés en 2016, mais ces relevés sont coûteux et difficiles à reproduire à grande échelle. L'objectif est donc de prédire la consommation d'énergie et les émissions de CO2 des bâtiments non mesurés à partir de leurs caractéristiques structurelles (taille, usage, date de construction, etc.).
+Dans le cadre des efforts de la ville de **Seattle** pour atteindre la **neutralité carbone d’ici 2050**, j’ai été chargé de développer des **modèles prédictifs** pour estimer la **consommation d’énergie** et les **émissions de CO2** des bâtiments non résidentiels.  
+L’objectif : éviter les campagnes de relevés coûteuses en s’appuyant sur les **caractéristiques structurelles** des bâtiments.
 
-En parallèle, je dois également évaluer l’intérêt du **"ENERGY STAR Score"**, un indicateur complexe à calculer, pour estimer les émissions et la consommation d’énergie. Le projet inclut la comparaison de plusieurs algorithmes de machine learning pour trouver les meilleurs modèles prédictifs.
+Le projet comprend également l’évaluation de l’intérêt du **"Energy Star Score"**, un indicateur environnemental complexe, dans les prédictions. Il repose sur l’application de **plusieurs algorithmes de machine learning** et sur une forte démarche exploratoire et interprétative.
 
-## Objectifs du Projet
+---
 
-1. **Analyse Exploratoire des Données** : Explorer et comprendre les données collectées, identifier les variables pertinentes et nettoyer les valeurs manquantes et aberrantes.
-   
-2. **Modélisation Prédictive** : Développer plusieurs modèles de machine learning pour prédire les émissions de CO2 et la consommation d'énergie des bâtiments non mesurés. Tester au minimum quatre algorithmes issus de différentes familles (par exemple : ElasticNet, SVM, Gradient Boosting, Random Forest).
+## 🎯 Objectifs de la mission
 
-3. **Optimisation des Modèles** : Ajuster et optimiser les hyperparamètres des modèles en utilisant des techniques de validation croisée et de recherche d’hyperparamètres.
+1. Réaliser une **analyse exploratoire approfondie** des données
+2. Développer et comparer plusieurs **modèles de prédiction** (ML)
+3. Optimiser les modèles via **validation croisée** et **Grid Search**
+4. Identifier les variables les plus influentes (via **SHAP**, **LIME**, etc.)
+5. Évaluer la **pertinence du Energy Star Score** dans les prédictions
 
-4. **Analyse de l'Importance des Variables** : Comprendre l'importance des variables structurelles dans la prédiction des émissions et de la consommation d'énergie, notamment l’impact du **"ENERGY STAR Score"**.
+---
 
-## Étapes du Projet
+## 🧩 Étapes de réalisation
 
-### Étape 1 : Analyse Exploratoire des Données
+### 1. Analyse exploratoire des données (EDA)
 
-- **Objectif** : Explorer les données pour mieux comprendre la distribution des variables, identifier les valeurs aberrantes et les relations entre les variables.
-- **Détails** :
-  - Calculer des statistiques descriptives sur les variables principales.
-  - Réaliser des visualisations (histogrammes, boxplots, nuages de points) pour examiner les relations entre les variables et les cibles (émissions de CO2 et consommation d'énergie).
-  - Nettoyer les données, gérer les valeurs manquantes, et traiter les valeurs aberrantes.
-- **Livrable** : Un notebook contenant les statistiques descriptives, visualisations et premières idées de transformations des variables.
+- Visualisation de la distribution des variables
+- Détection de valeurs aberrantes et traitement des valeurs manquantes
+- Étude des corrélations entre caractéristiques et cibles
 
-### Étape 2 : Développement et Simulation d'un Premier Modèle
+### 2. Modélisation initiale
 
-- **Objectif** : Développer un modèle initial de prédiction des émissions de CO2 et de la consommation d'énergie.
-- **Détails** :
-  - Commencer avec un modèle simple (par exemple, une régression linéaire) pour établir une ligne de base.
-  - Utiliser une validation croisée pour évaluer la performance du modèle sur des données non vues (mesures : R², MAE, RMSE).
-  - Documenter les premiers résultats pour voir si des améliorations sont possibles à travers un meilleur feature engineering.
-- **Livrable** : Un premier modèle de prédiction avec les évaluations de performance.
+- Développement de modèles simples (régression linéaire) pour établir une baseline
+- Validation croisée (K-Fold) avec évaluation : **R²**, **MAE**, **RMSE**
 
-### Étape 3 : Amélioration du Feature Engineering
+### 3. Feature Engineering
 
-- **Objectif** : Optimiser le modèle initial en améliorant les caractéristiques utilisées pour la prédiction.
-- **Détails** :
-  - Appliquer des transformations (normalisation, encodage de variables catégorielles) pour améliorer la pertinence des variables.
-  - Créer de nouvelles caractéristiques pertinentes, comme la proportion de sources d'énergie ou des indicateurs géographiques.
-  - Tester différentes techniques de réduction de dimensions comme **PCA** (analyse en composantes principales) si nécessaire.
-- **Livrable** : Un notebook montrant les étapes du feature engineering et l'impact sur la performance des modèles.
+- Encodage des variables catégorielles
+- Création de nouvelles variables : ratios, indicateurs énergétiques
+- Normalisation / standardisation
+- PCA (si pertinent)
 
-### Étape 4 : Test de Différents Modèles et Choix du Modèle Final
+### 4. Modélisation avancée et optimisation
 
-- **Objectif** : Tester différents modèles et sélectionner le meilleur.
-- **Détails** :
-  - Tester plusieurs algorithmes de machine learning, tels que **ElasticNet**, **SVM**, **Gradient Boosting**, et **Random Forest**.
-  - Utiliser des techniques de recherche d'hyperparamètres (Grid Search ou Random Search) pour optimiser les modèles.
-  - Comparer les performances des modèles avec des métriques comme le R², MAE, et RMSE.
-- **Livrable** : Un modèle final optimisé avec les hyperparamètres ajustés et les évaluations de performance.
+- Test d’algorithmes :
+  - **ElasticNet**
+  - **SVM**
+  - **Random Forest**
+  - **Gradient Boosting**
+- Optimisation via **Grid Search** ou **Random Search**
+- Comparaison des performances
 
-### Étape 5 : Analyse de l'Importance des Variables
+### 5. Analyse de l’importance des variables
 
-- **Objectif** : Analyser les variables les plus importantes dans les prédictions du modèle final.
-- **Détails** :
-  - Utiliser des techniques comme **SHAP**, **LIME**, ou les coefficients des modèles linéaires pour interpréter l'importance des caractéristiques.
-  - Visualiser l'importance des variables pour comprendre leur influence sur les prédictions.
-  - Documenter les résultats et les implications pour la prise de décision.
-- **Livrable** : Un rapport contenant une analyse de l’importance des variables et des visualisations pertinentes.
+- Interprétation des modèles avec **SHAP**, **LIME**, coefficients
+- Visualisation des variables les plus influentes
+- Recommandations basées sur les insights
 
-### Étape 6 : Évaluation de l’Influence de l'EnergyStarScore
+### 6. Évaluation du Energy Star Score
 
-- **Objectif** : Évaluer si l'**EnergyStarScore** a un impact significatif sur la performance du modèle.
-- **Détails** :
-  - Créer un sous-ensemble de données incluant et excluant l'EnergyStarScore.
-  - Tester l'influence de cette caractéristique sur l’entraînement et les performances des modèles.
-  - Comparer les résultats pour déterminer si l’EnergyStarScore est nécessaire pour prédire efficacement les émissions de CO2 et la consommation d'énergie.
-- **Livrable** : Un rapport analysant l'impact de l'EnergyStarScore sur les modèles de prédiction.
+- Comparaison des performances avec et sans cette variable
+- Analyse de sa contribution à la prédiction
+- Justification de son utilité ou non dans le modèle final
 
-### Étape 7 : Modélisation de la Deuxième Target
+### 7. Modélisation de la seconde target
 
-- **Objectif** : Reproduire le processus de modélisation pour la deuxième cible (émissions de CO2 ou consommation d’énergie, selon la cible initiale).
-- **Détails** :
-  - Répéter les étapes de nettoyage des données, de modélisation, d’optimisation des hyperparamètres et d’analyse des variables.
-  - Documenter les résultats et comparer avec la première target.
-- **Livrable** : Un deuxième notebook avec les résultats de la modélisation pour la deuxième cible.
+- Reproduction du pipeline complet pour la deuxième variable cible
+  (émissions ou consommation selon le choix initial)
 
-## Détails Techniques
+---
 
-- **Fichiers** :
-  - `Dataset des bâtiments de Seattle` : Données des bâtiments non résidentiels de la ville de Seattle, incluant leurs caractéristiques structurelles et énergétiques.
-  - **Notebook de Préparation des Données** : Contient les étapes de nettoyage, de gestion des valeurs manquantes, et de transformation des variables.
-  - **Notebook de Modélisation** : Contient les tests des différents algorithmes et les évaluations des performances.
-  - **Notebook d’Analyse de l’Importance des Variables** : Contient les analyses de l’importance des variables et l’influence de l'EnergyStarScore.
+## 📂 Livrables
 
-- **Outils Utilisés** :
-  - **Python**, avec les bibliothèques **pandas**, **scikit-learn**, **SHAP**, **LIME**, **matplotlib**, **seaborn** pour la préparation des données, la modélisation, et la visualisation.
-  - **Grid Search** et **Random Search** pour l’optimisation des hyperparamètres.
+- **Notebook de préparation des données**
+- **Notebook de modélisation initiale et avancée**
+- **Notebook d’analyse des variables importantes**
+- **Rapport d’évaluation du Energy Star Score**
+- **Présentation finale** des résultats et recommandations
 
-- **Compétences Utilisées** :
-  - Analyse exploratoire des données (EDA).
-  - Feature engineering et gestion des valeurs aberrantes et manquantes.
-  - Modélisation de machine learning et optimisation d’hyperparamètres.
-  - Analyse de l’importance des caractéristiques (SHAP, LIME).
+---
 
-## Résumé
+## 🛠️ Compétences mobilisées
 
-Ce projet vise à prédire la consommation d'énergie et les émissions de CO2 des bâtiments non résidentiels à Seattle. Grâce à l’utilisation de techniques avancées de machine learning et d’analyse des données, je fournis un modèle prédictif robuste et une analyse approfondie de l'importance des variables, notamment l’influence de l’**EnergyStarScore**. Les résultats contribueront aux efforts de la ville pour atteindre ses objectifs de neutralité carbone d’ici 2050.
+- **EDA avancée** et visualisation (matplotlib, seaborn)
+- Feature engineering, traitement des outliers, normalisation
+- Modélisation avec **scikit-learn** (régressions, SVM, RF, GB)
+- **Optimisation des hyperparamètres** (GridSearchCV)
+- **Interprétabilité des modèles** (SHAP, LIME)
+- Communication claire des résultats à une audience métier
+
+---
+
+## ✅ Résultats et impact
+
+- Modèle prédictif performant pour estimer consommation et émissions
+- Identification des **caractéristiques clés influençant la performance énergétique**
+- Aide à la **priorisation des interventions** sans mesures physiques coûteuses
+- Support aux décisions stratégiques de la ville dans le cadre de sa **politique climat**
+
+---
+
+## 🔍 Aperçu
+
+> Ce projet illustre mes compétences en **machine learning appliqué aux problématiques environnementales**, en **interprétabilité de modèles**, et en **mise en œuvre de pipelines complets** pour des cas réels à fort impact sociétal.
+
+---
+
+*Mission réalisée dans un cadre professionnel simulé, avec des responsabilités équivalentes à celles d’un Data Scientist pour une collectivité territoriale engagée dans la transition écologique.*
